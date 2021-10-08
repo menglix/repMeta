@@ -20,6 +20,6 @@ The meta-analysis dataset needs be transformed by \code{\link{data.trans.bin}} o
 }
 \examples{
 # Obtain the R1
-data.case <- data.trans.bin(data=moller2012,ai = r1, n1i = n1, ci = r2, n2i = n2,measure="OR")
+data.case <- data.trans.bin(data=moller12,ai = r1, n1i = n1, ci = r2, n2i = n2,measure="OR")
 pRmasym(data.case,1)
 }

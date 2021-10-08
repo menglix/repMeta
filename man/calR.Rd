@@ -15,7 +15,7 @@ calR(dat1, m)
 A list contains the observed Rm and \eqn{\mathcal{C}^n_m} values of \eqn{R_{\mathcal{A}_{m,k}}} from the meta-analysis.
 \describe{
   \item{\code{maxR}}{the observed Rm.}
-  \item{Two}{\eqn{R_{\mathcal{A}_{m,k}}} values, a vector of length \eqn{\mathcal{C}^n_m}.}
+  \item{\code{Rvals}}{\eqn{R_{\mathcal{A}_{m,k}}} values, a vector of length \eqn{\mathcal{C}^n_m}.}
 }
 }
 \description{
@@ -24,5 +24,6 @@ The meta-analysis dataset needs be transformed by \code{\link{data.trans.bin}} o
 }
 \examples{
 # Obtain the R1
-calR(dat1,1)
+data.case <- data.trans.bin(data=moller12,ai = r1, n1i = n1, ci = r2, n2i = n2,measure="OR")
+calR(data.case,1)
 }

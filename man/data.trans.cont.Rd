@@ -21,5 +21,5 @@ This function renames a meta-analysis dataset with continuous outcomes to the da
 }
 \examples{
 # Obtain the transformed data frame format
-data.case.a1 <- data.trans.cont(data=lahart2018,y = y, s2 = s2)
+data.case.a1 <- data.trans.cont(data=lahart18,y = y, s2 = s2)
 }

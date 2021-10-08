@@ -20,7 +20,7 @@ The meta-analysis dataset needs be transformed by \code{\link{data.trans.bin}} o
 }
 \examples{
 # Identify the non-replicable study using \eqn{R_1}
-data.case <- data.trans.bin(data=moller2012,ai = r1, n1i = n1, ci = r2, n2i = n2,measure="OR")
+data.case <- data.trans.bin(data=moller12,ai = r1, n1i = n1, ci = r2, n2i = n2,measure="OR")
 iden.ls <- Rm.func.iterative(data.case,1)
 # \eqn{p}-value of replicability test
 iden.ls$P_1

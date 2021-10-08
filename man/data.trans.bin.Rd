@@ -4,7 +4,7 @@
 \alias{data.trans.bin}
 \title{Transform a meta-analysis dataset with binary outcomes.}
 \usage{
-data.trans.bin(data = data, n1i, ai, n2i, ci, measure, ...)
+data.trans.bin(data = data, n1i, ai, bi, n2i, ci, di, measure, ...)
 }
 \arguments{
 \item{data}{data.frame, a meta-analysis dataset with \eqn{n} studies.}
@@ -13,17 +13,17 @@ data.trans.bin(data = data, n1i, ai, n2i, ci, measure, ...)
 
 \item{ai}{column name in \code{data} to specify the 2 × 2 table frequencies (upper left cell).}
 
+\item{bi}{column name in \code{data} to specify the 2 × 2 table frequencies (upper right cell).}
+
 \item{n2i}{column name in \code{data}  to specify the group sizes or row totals (second group/row).}
 
 \item{ci}{column name in \code{data} to specify the 2 × 2 table frequencies (lower left cell).}
 
+\item{di}{column name in \code{data} to specify the 2 × 2 table frequencies (lower right cell).}
+
 \item{measure}{a character string indicating which effect size or outcome measure should be calculated. See \code{\link[metafor]{escalc}} for details.}
 
 \item{...}{other arguments in \code{\link[metafor]{escalc}}.}
-
-\item{bi}{column name in \code{data} to specify the 2 × 2 table frequencies (upper right cell).}
-
-\item{di}{column name in \code{data} to specify the 2 × 2 table frequencies (lower right cell).}
 }
 \value{
 An object of class c("escalc","data.frame").
@@ -33,5 +33,5 @@ This function transforms a meta-analysis dataset with binary outcomes to the dat
 }
 \examples{
 # Obtain the transformed data frame format with odds ratio as the summary measure
-data.case <- data.trans.bin(data=moller2012,ai = r1, n1i = n1, ci = r2, n2i = n2,measure="OR")
+data.case <- data.trans.bin(data=moller12,ai = r1, n1i = n1, ci = r2, n2i = n2,measure="OR")
 }

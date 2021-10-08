@@ -4,7 +4,7 @@
 \alias{calempF}
 \title{Obtain multiple \eqn{R_m} values from parametric bootstrap}
 \usage{
-calempF(dat1, m)
+calempF(dat1, m, nb = 1000)
 }
 \arguments{
 \item{dat1}{data frame, a meta-analysis dataset with after \code{\link{data.trans.bin}} or \code{\link{data.trans.cont}}.}
