@@ -1,0 +1,11 @@
+citHeader("To cite repMeta in publications use:")
+
+citEntry(
+  entry    = "Manual",
+  title    = "{repMeta}: Quantifying Replicability of Multiple Studies in a Meta-Analysis",
+  author   = personList(as.person("Mengli Xiao"),
+                   as.person("Haitao Chu"),as.person(James S. Hodges),
+                   as.person("Lifeng Lin")),
+  year     = "2021",
+  url      = "https://github.com/menglix/repMeta",
+)

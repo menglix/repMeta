@@ -1,0 +1,18 @@
+Package: repMeta
+Type: Package
+Title: {repMeta}: Quantifying Replicability of Multiple Studies in a Meta-Analysis
+Version: 0.1.0
+Depends: R (>= 3.5)
+Imports:
+        parallel,
+        evd,
+        metafor
+Author: Mengli Xiao, Haitao Chu, James S. Hodges, and Lifeng Lin
+Maintainer: Mengli Xiao <xiaox345@umn.edu>
+Description: The package provides functionality for replicability analysis of multiple studies in a meta-analysis, as
+    described in detail in the paper Quantifying Replicability of Multiple Studies in a Meta-Analysis
+License: GPL (>= 2)
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.0
+
