@@ -34,7 +34,7 @@ meta.reml <- function(dat){
 #' @return A list contains the observed Rm and \eqn{\mathcal{C}^n_m} values of \eqn{R_{\mathcal{A}_{m,k}}} from the meta-analysis.
 #' \describe{
 #'   \item{\code{maxR}}{the observed Rm.}
-#'   \item{Two}{\eqn{R_{\mathcal{A}_{m,k}}} values, a vector of length \eqn{\mathcal{C}^n_m}.}
+#'   \item{\code{Rvals}}{\eqn{R_{\mathcal{A}_{m,k}}} values, a vector of length \eqn{\mathcal{C}^n_m}.}
 #' }
 #' @examples
 #' # Obtain the R1
