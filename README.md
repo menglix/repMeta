@@ -1,51 +1,46 @@
 # repMeta
 R package for quantifying replicability of multiple studies in a meta-analysis
 
+# Requirements
+
+- R (> 3.5)
+- `metafor`
+- `evd`
+- `parallel`
+
 # Download
-> install.packages("devtools") # comment out if you have the devtools package
->
-> devtools::install_github("menglix/repMeta")
-
-# Required R packages
-
-> metafor
-
-> evd
-
-> parallel
+```R
+install.packages("devtools") # comment out if you have the devtools package
+devtools::install_github("menglix/repMeta")
+```
 
 # Minimum toy example to reproduce the case study in the paper
 
-## load required packages
+```R
+## Load required packages
+library(metafor) 
+library(evd)
+library(parallel)
 
-> library(metafor)
-> 
-> library(evd)
->
-> library(parallel)
+## Transform the data
+### The data should contain the columns with effect size named by "y" and within-study variance named by "s2" 
+data.case <- data.trans.bin(data=moller12,ai = r1, n1i = n1, ci = r2, n2i = n2,measure="OR")
 
-## transform the data
+## Calculate $R_1$ for the given data
+calR(data.case,m=1)
 
-### the data should contain the columns with effect size named by "y" and within-study variance named by "s2" 
+## Replicability test
+### Replicability test based on Gumbel approximation
+pRmasym(data.case,m=1)
 
-> data.case <- data.trans.bin(data=moller12,ai = r1, n1i = n1, ci = r2, n2i = n2,measure="OR")
+### Replicability test based on the bootstrap approximation
+pRmboot(data.case,m=1)
 
-## calculate $R_1$ for the given data
-> calR(data.case,m=1)
-
-## replicability test
-
-### replicability test based on Gumbel approximation
-> pRmasym(data.case,m=1)
-
-### replicability test based on the bootstrap approximation
-> pRmboot(data.case,m=1)
-
-## identify studies with non-replicable results
-
-### identify studies using Gumbel approximation
-> Rm.func.iterative(data.case,m=1)
+## Identify studies with non-replicable results
+### Identify studies using Gumbel approximation
+Rm.func.iterative(data.case,m=1)
 
 ### identify studies using bootstrap approximation
-> Rm.func.iterative.boot(data.case,m=1)
+Rm.func.iterative.boot(data.case,m=1)
 
+```
