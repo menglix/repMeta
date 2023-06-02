@@ -1,6 +1,6 @@
-#' Transform a meta-analysis dataset with binary outcomes.
+#' Transform a meta-analysis dataset for replicability analysis.
 #'
-#' This function transforms a meta-analysis dataset with binary outcomes to the dataset compatible of the package.
+#' This function transforms a meta-analysis dataset to the dataset compatible of the package. More details are in \code{\link[metafor]{escalc}}.
 #' @param measure a character string to specify which effect size or outcome measure should be calculated. See \code{Details} in \code{\link[metafor]{escalc}} for possible options and how the data needed to compute the selected effect size or outcome measure should then be specified (i.e., which of the following arguments need to be used).
 #' @param ai vector with the \mjeqn{2 \times 2}{2x2} table frequencies (upper left cell).
 #' @param bi vector with the \mjeqn{2 \times 2}{2x2} table frequencies (upper right cell).
