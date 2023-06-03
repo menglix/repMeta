@@ -21,6 +21,7 @@ devtools::install_github("menglix/repMeta")
 library(metafor) 
 library(evd)
 library(parallel)
+library(repMeta)
 
 ## Transform the data
 ### The data should contain the columns with effect size named by "y" and within-study variance named by "s2" 
