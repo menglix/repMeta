@@ -2,7 +2,10 @@ Package: repMeta
 Type: Package
 Title: {repMeta}: Quantifying Replicability of Multiple Studies in a Meta-Analysis
 Version: 0.1.0
-Depends: R (>= 3.5)
+Depends: R (>= 3.5),
+        parallel,
+        evd,
+        metafor
 Imports:
         parallel,
         evd,
