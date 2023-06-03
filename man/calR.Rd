@@ -4,10 +4,10 @@
 \alias{calR}
 \title{Quantify replicability in a meta-analysis by the observed \eqn{R_m} statistic}
 \usage{
-calR(dat1, m)
+calR(dat1, m = 1)
 }
 \arguments{
-\item{dat1}{data.frame, a meta-analysis dataset with \eqn{n} studies after transformed by \code{\link{data.trans.bin}} or \code{\link{data.trans.cont}}.}
+\item{dat1}{data.frame, a meta-analysis dataset with \eqn{n} studies after transformed by \code{\link{to.dat.repMeta}}.}
 
 \item{m}{numeric, \eqn{m} value.}
 }
@@ -20,7 +20,7 @@ A list contains the observed Rm and \eqn{\mathcal{C}^n_m} values of \eqn{R_{\mat
 }
 \description{
 This function obtains the observed \eqn{R_m} statistic to qunaitfy replicability of all studies in a meta-analysis.
-The meta-analysis dataset needs be transformed by \code{\link{data.trans.bin}} or \code{\link{data.trans.cont}}.
+The meta-analysis dataset needs be transformed by \code{\link{to.dat.repMeta}} before using this function.
 }
 \examples{
 # Obtain the R1

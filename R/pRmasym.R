@@ -1,14 +1,14 @@
 #' Test the replicability of multiple studies in a meta-analysis from \eqn{R_m} (the Gumbel approximation)
 #'
 #' This function obtains the \eqn{p}-value of the replicability test (detect non-replicability), using the Gumbel approximation.
-#' The meta-analysis dataset needs be transformed by \code{\link{data.trans.bin}} or \code{\link{data.trans.cont}}.
+#' The meta-analysis dataset needs be transformed by \code{\link{to.dat.repMeta}}.
 #'
-#' @param dat1 data.frame, a meta-analysis dataset with \eqn{n} studies after transformed by \code{\link{data.trans.bin}} or \code{\link{data.trans.cont}}.
+#' @param dat1 data.frame, a meta-analysis dataset with \eqn{n} studies after transformed by \code{\link{to.dat.repMeta}}.
 #' @param m numeric, \eqn{m} value.
 #' @return The \eqn{p}-value of \eqn{R_m} from the Gumbel approximation.
 #' @examples
 #' # Obtain the R1
-#' data.case <- data.trans.bin(data=moller12,ai = r1, n1i = n1, ci = r2, n2i = n2,measure="OR")
+#' data.case <- to.dat.repMeta(data=moller12,ai = r1, n1i = n1, ci = r2, n2i = n2,measure="OR")
 #' pRmasym(data.case,1)
 #' @export
 pRmasym <- function(dat1,m){

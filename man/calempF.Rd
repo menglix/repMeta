@@ -7,7 +7,7 @@
 calempF(dat1, m, nb = 1000)
 }
 \arguments{
-\item{dat1}{data frame, a meta-analysis dataset with after \code{\link{data.trans.bin}} or \code{\link{data.trans.cont}}.}
+\item{dat1}{data frame, a meta-analysis dataset with after \code{\link{to.dat.repMeta}}.}
 
 \item{m}{numeric, \eqn{m} value.}
 

@@ -1,19 +1,19 @@
 #' Identify non-replicable studies in a meta-analysis from \eqn{R_m} (the Gumbel approximation)
 #'
 #' This function identifies non-replicable studies from \eqn{R_m} and replicability test (using the Gumbel approximation).
-#' The meta-analysis dataset needs be transformed by \code{\link{data.trans.bin}} or \code{\link{data.trans.cont}}.
+#' The meta-analysis dataset needs be transformed by \code{\link{to.dat.repMeta}}.
 #'
-#' @param dat1 data.frame, a meta-analysis dataset with \eqn{n} studies after transformed by \code{\link{data.trans.bin}} or \code{\link{data.trans.cont}}.
+#' @param dat1 data.frame, a meta-analysis dataset with \eqn{n} studies after transformed by \code{\link{to.dat.repMeta}}.
 #' @param m numeric, \eqn{m} value, the default is 1.
 #' @return A list object containing following components:
 #' \describe{
 #'   \item{\code{stat}}{a vector of the \eqn{R_m} value and its corresponding \eqn{p}-value after non-replicable studies are removed.}
 #'   \item{\code{P_1}}{\eqn{p}-value of replicability test for the dataset using the Gumbel approximation.}
-#'   \item{\code{out_studies}{Row indices of the non-replicable studies in \code{dat1}}
+#'   \item{\code{out_studies}{Row indices of the non-replicable studies in \code{dat1}}}
 #' }
 #' @examples
 #' # Identify the non-replicable study using \eqn{R_1}
-#' data.case <- data.trans.bin(data=moller12,ai = r1, n1i = n1, ci = r2, n2i = n2,measure="OR")
+#' data.case <- to.dat.repMeta(data=moller12,ai = r1, n1i = n1, ci = r2, n2i = n2,measure="OR")
 #' iden.ls <- Rm.func.iterative(data.case,1)
 #' # \eqn{p}-value of replicability test
 #' iden.ls$P_1

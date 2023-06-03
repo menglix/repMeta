@@ -7,7 +7,7 @@
 pRmboot(dat1, m = 1)
 }
 \arguments{
-\item{dat1}{data.frame, a meta-analysis dataset with \eqn{n} studies after transformed by \code{\link{data.trans.bin}} or \code{\link{data.trans.cont}}.}
+\item{dat1}{data.frame, a meta-analysis dataset with \eqn{n} studies after transformed by \code{\link{to.dat.repMeta}}.}
 
 \item{m}{numeric, \eqn{m} value.}
 }
@@ -16,10 +16,10 @@ The \eqn{p}-value of \eqn{R_m} from the parametric bootstrap.
 }
 \description{
 This function obtains the \eqn{p}-value of the replicability test (detect non-replicability), using the parametric bootstrap.
-The meta-analysis dataset needs be transformed by \code{\link{data.trans.bin}} or \code{\link{data.trans.cont}}.
+The meta-analysis dataset needs be transformed by \code{\link{to.dat.repMeta}}.
 }
 \examples{
 # Obtain the R1
-data.case <- data.trans.bin(data=moller12,ai = r1, n1i = n1, ci = r2, n2i = n2,measure="OR")
+data.case <- to.dat.repMeta(data=moller12,ai = r1, n1i = n1, ci = r2, n2i = n2,measure="OR")
 pRmboot(data.case,1)
 }

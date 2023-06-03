@@ -10,7 +10,7 @@ bootdat <- function(dat1,SEED,tau2){
 #'
 #' This function obtains numbers of \eqn{nb} \eqn{R_m} values from parametric bootstrap
 #'
-#' @param dat1 data frame, a meta-analysis dataset with after \code{\link{data.trans.bin}} or \code{\link{data.trans.cont}}.
+#' @param dat1 data frame, a meta-analysis dataset with after \code{\link{to.dat.repMeta}}.
 #' @param m numeric, \eqn{m} value.
 #' @param nb numeric, number of iterations in parametric bootstrap.
 #' @return \eqn{R_m} values from parametric bootstrap, a vector of length \eqn{nb}.

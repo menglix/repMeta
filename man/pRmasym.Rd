@@ -7,7 +7,7 @@
 pRmasym(dat1, m)
 }
 \arguments{
-\item{dat1}{data.frame, a meta-analysis dataset with \eqn{n} studies after transformed by \code{\link{data.trans.bin}} or \code{\link{data.trans.cont}}.}
+\item{dat1}{data.frame, a meta-analysis dataset with \eqn{n} studies after transformed by \code{\link{to.dat.repMeta}}.}
 
 \item{m}{numeric, \eqn{m} value.}
 }
@@ -16,10 +16,10 @@ The \eqn{p}-value of \eqn{R_m} from the Gumbel approximation.
 }
 \description{
 This function obtains the \eqn{p}-value of the replicability test (detect non-replicability), using the Gumbel approximation.
-The meta-analysis dataset needs be transformed by \code{\link{data.trans.bin}} or \code{\link{data.trans.cont}}.
+The meta-analysis dataset needs be transformed by \code{\link{to.dat.repMeta}}.
 }
 \examples{
 # Obtain the R1
-data.case <- data.trans.bin(data=moller12,ai = r1, n1i = n1, ci = r2, n2i = n2,measure="OR")
+data.case <- to.dat.repMeta(data=moller12,ai = r1, n1i = n1, ci = r2, n2i = n2,measure="OR")
 pRmasym(data.case,1)
 }

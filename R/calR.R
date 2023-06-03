@@ -27,9 +27,9 @@ meta.reml <- function(dat){
 #' Quantify replicability in a meta-analysis by the observed \eqn{R_m} statistic
 #'
 #' This function obtains the observed \eqn{R_m} statistic to qunaitfy replicability of all studies in a meta-analysis.
-#' The meta-analysis dataset needs be transformed by \code{\link{data.trans.bin}} or \code{\link{data.trans.cont}}.
+#' The meta-analysis dataset needs be transformed by \code{\link{to.dat.repMeta}} before using this function.
 #'
-#' @param dat1 data.frame, a meta-analysis dataset with \eqn{n} studies after transformed by \code{\link{data.trans.bin}} or \code{\link{data.trans.cont}}.
+#' @param dat1 data.frame, a meta-analysis dataset with \eqn{n} studies after transformed by \code{\link{to.dat.repMeta}}.
 #' @param m numeric, \eqn{m} value.
 #' @return A list contains the observed Rm and \eqn{\mathcal{C}^n_m} values of \eqn{R_{\mathcal{A}_{m,k}}} from the meta-analysis.
 #' \describe{
@@ -41,7 +41,11 @@ meta.reml <- function(dat){
 #' data.case <- data.trans.bin(data=moller12,ai = r1, n1i = n1, ci = r2, n2i = n2,measure="OR")
 #' calR(data.case,1)
 #' @export
-calR <- function(dat1,m){
+calR <- function(dat1,m=1){
+  if(!"y" %in% colnames(dat1)|!"s2" %in% colnames(dat1)){
+    stop("Must provide a dataframe with columns y and s2. \n Please use to.dat.repMeta() to transform your dataset into the replicability analysis data format.")
+  }
+  print(paste0("Calculating R",m,", users can specify a different m value in the argument."))
   # obtain Rm statistic
   lev_set <- combn(nrow(dat1),m)
   ncombn <- ncol(lev_set)
