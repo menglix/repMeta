@@ -24,7 +24,7 @@ library(parallel)
 
 ## Transform the data
 ### The data should contain the columns with effect size named by "y" and within-study variance named by "s2" 
-data.case <- data.trans.bin(data=moller12,ai = r1, n1i = n1, ci = r2, n2i = n2,measure="OR")
+data.case <- to.dat.repMeta(data=moller12,ai = r1, n1i = n1, ci = r2, n2i = n2,measure="OR")
 
 ## Calculate $R_1$ for the given data
 calR(data.case,m=1)
