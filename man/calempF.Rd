@@ -4,7 +4,7 @@
 \alias{calempF}
 \title{Obtain multiple \eqn{R_m} values from parametric bootstrap}
 \usage{
-calempF(dat1, m, nb = 1000)
+calempF(dat1, m, nb = 1000, n.cores = getOption("mc.cores", 2L))
 }
 \arguments{
 \item{dat1}{data frame, a meta-analysis dataset with after \code{\link{to.dat.repMeta}}.}
@@ -20,8 +20,9 @@ calempF(dat1, m, nb = 1000)
 This function obtains numbers of \eqn{nb} \eqn{R_m} values from parametric bootstrap
 }
 \examples{
+data.case <- to.dat.repMeta(data=moller12,ai = r1, n1i = n1, ci = r2, n2i = n2,measure="OR")
 # 1000 bootstrapped \eqn{R_1} values
-calemF(dat1,1)
+calempF(data.case,1)
 # 500 bootstrapped \eqn{R_1} values
-calemF(dat1,1,nb=500)
+calempF(data.case,1,nb=500)
 }

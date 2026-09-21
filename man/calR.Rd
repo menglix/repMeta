@@ -24,6 +24,6 @@ The meta-analysis dataset needs be transformed by \code{\link{to.dat.repMeta}} b
 }
 \examples{
 # Obtain the R1
-data.case <- data.trans.bin(data=moller12,ai = r1, n1i = n1, ci = r2, n2i = n2,measure="OR")
+data.case <- to.dat.repMeta(data=moller12,ai = r1, n1i = n1, ci = r2, n2i = n2,measure="OR")
 calR(data.case,1)
 }
