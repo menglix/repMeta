@@ -16,7 +16,7 @@ A list object containing following components:
 \describe{
   \item{\code{stat}}{a vector of the \eqn{R_m} value and its corresponding \eqn{p}-value after non-replicable studies are removed, using parametric bootstrap.}
   \item{\code{P_1}}{\eqn{p}-value of replicability test for the dataset using parametric bootstrap.}
-  \item{\code{out_studies}{Row indices of the non-replicable studies in \code{dat1}}}
+  \item{\code{nonrep_studies}}{Row indices of the non-replicable studies in \code{dat1}}
 }
 }
 \description{
@@ -25,13 +25,13 @@ The meta-analysis dataset needs be transformed by \code{\link{to.dat.repMeta}}.
 }
 \examples{
 # Identify the non-replicable study using \eqn{R_1}
-data.case <- to.dat.repMeta(data=moller2012,ai = r1, n1i = n1, ci = r2, n2i = n2,measure="OR")
+data.case <- to.dat.repMeta(data=moller12,ai = r1, n1i = n1, ci = r2, n2i = n2,measure="OR")
 iden.ls.boot <- Rm.func.iterative.boot(data.case,1)
 # \eqn{p}-value of replicability test
 iden.ls.boot$P_1
 # index of non-replicable study
-iden.ls.boot$out_studies
-nonrep.id <- iden.ls.boot$out_studies
+iden.ls.boot$nonrep_studies
+nonrep.id <- iden.ls.boot$nonrep_studies
 # \eqn{R_1} and its \eqn{p}-value among replicable studies
 iden.ls.boot$stat
 }

@@ -16,7 +16,7 @@ A list object containing following components:
 \describe{
   \item{\code{stat}}{a vector of the \eqn{R_m} value and its corresponding \eqn{p}-value after non-replicable studies are removed.}
   \item{\code{P_1}}{\eqn{p}-value of replicability test for the dataset using the Gumbel approximation.}
-  \item{\code{out_studies}{Row indices of the non-replicable studies in \code{dat1}}}
+  \item{\code{nonrep_studies}}{Row indices of the non-replicable studies in \code{dat1}}
 }
 }
 \description{
@@ -30,8 +30,8 @@ iden.ls <- Rm.func.iterative(data.case,1)
 # \eqn{p}-value of replicability test
 iden.ls$P_1
 # index of non-replicable study
-iden.ls$out_studies
-nonrep.id <- iden.ls$out_studies
+iden.ls$nonrep_studies
+nonrep.id <- iden.ls$nonrep_studies
 # \eqn{R_1} and its \eqn{p}-value among replicable studies
 iden.ls$stat
 }
