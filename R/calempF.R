@@ -35,7 +35,7 @@ calempF <- function(dat1,m,nb=1000,n.cores=getOption("mc.cores",2L)){
     cl <- parallel::makeCluster(n.cores)
     on.exit(parallel::stopCluster(cl),add=TRUE)
     Rmls <- parallel::parLapply(cl,seed.ls,function(SEED,dat1,tau2,m){
-      dat1.boot <- repMeta::bootdat(dat1,SEED,tau2)
+      dat1.boot <- bootdat(dat1,SEED,tau2)
       ## leave one study out
       maxR <- repMeta::calR(dat1.boot,m)
       Rm <- maxR$maxR
