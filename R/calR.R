@@ -38,7 +38,7 @@ meta.reml <- function(dat){
 #' }
 #' @examples
 #' # Obtain the R1
-#' data.case <- data.trans.bin(data=moller12,ai = r1, n1i = n1, ci = r2, n2i = n2,measure="OR")
+#' data.case <- to.dat.repMeta(data=moller12,ai = r1, n1i = n1, ci = r2, n2i = n2,measure="OR")
 #' calR(data.case,1)
 #' @export
 calR <- function(dat1,m=1){
