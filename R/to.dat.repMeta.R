@@ -147,7 +147,7 @@ to.dat.repMeta <-
     if (!missing(digits))
       escalc.args$digits <- digits
     escalc.args <- c(escalc.args, list(...))
-    data <- do.call(escalc, escalc.args)
+    data <- do.call(metafor::escalc, escalc.args)
     dat <- data.frame(y = data$yi, s2 = data$vi)
     return(dat)
   }
