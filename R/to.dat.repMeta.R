@@ -51,108 +51,103 @@
 #' Similar to \code{metafor}, we can compute any other measure, such as logit transformed proportions under example 1 of \code{\link[metafor]{conv.delta}}.
 #' to.dat.repMeta(measure="PLO", xi=c(5,12), ni=c(40,80))
 #' @export
-to.dat.repMeta <- function(measure, ai, bi, ci, di, n1i, n2i, x1i, x2i, t1i,
-                           t2i, m1i, m2i, sd1i, sd2i, xi, mi, ri, ti, sdi, r2i, ni,
-                           yi, vi, sei, data=NULL, slab, subset, include, add = 1/2, to = "only0",
-                           drop00 = FALSE, vtype = "LS", var.names = c("yi", "vi"),
-                           add.measure = FALSE, append = TRUE, replace = TRUE, digits,
-                           ...){
-  mf <- match.call()
-  mfls <- as.list(mf[-1])
-  ### extract arguments with default values in the function.
-  for (name in names(mfls)){
-    eval(parse(text=paste0(name," <- eval(mfls$",name,", data, enclos = sys.frame(sys.parent()))")))
+to.dat.repMeta <-
+  function (measure, ai, bi, ci, di, n1i, n2i, x1i, x2i, t1i, t2i,
+            m1i, m2i, sd1i, sd2i, xi, mi, ri, ti, sdi, r2i, ni, yi, vi,
+            sei, data = NULL, slab, subset, include, add = 1/2, to = "only0",
+            drop00 = FALSE, vtype = "LS", var.names = c("yi", "vi"),
+            add.measure = FALSE, append = TRUE, replace = TRUE, digits,
+            ...)
+  {
+    mf <- match.call()
+    mfls <- as.list(mf[-1])
+    for (name in names(mfls)) {
+      eval(parse(text = paste0(name, " <- eval(mfls$", name,
+                               ", data, enclos = sys.frame(sys.parent()))")))
+    }
+    mf.ai <- mf[[match("ai", names(mf))]]
+    mf.bi <- mf[[match("bi", names(mf))]]
+    mf.ci <- mf[[match("ci", names(mf))]]
+    mf.di <- mf[[match("di", names(mf))]]
+    mf.n1i <- mf[[match("n1i", names(mf))]]
+    mf.n2i <- mf[[match("n2i", names(mf))]]
+    mf.yi <- mf[[match("yi", names(mf))]]
+    mf.sei <- mf[[match("sei", names(mf))]]
+    mf.vi <- mf[[match("vi", names(mf))]]
+    mf.x1i <- mf[[match("x1i", names(mf))]]
+    mf.x2i <- mf[[match("x2i", names(mf))]]
+    mf.t1i <- mf[[match("t1i", names(mf))]]
+    mf.t2i <- mf[[match("t2i", names(mf))]]
+    mf.m1i <- mf[[match("m1i", names(mf))]]
+    mf.m2i <- mf[[match("m2i", names(mf))]]
+    mf.sd1i <- mf[[match("sd1i", names(mf))]]
+    mf.sd2i <- mf[[match("sd2i", names(mf))]]
+    mf.xi <- mf[[match("xi", names(mf))]]
+    mf.mi <- mf[[match("mi", names(mf))]]
+    mf.ri <- mf[[match("ri", names(mf))]]
+    mf.ti <- mf[[match("ti", names(mf))]]
+    mf.sdi <- mf[[match("sdi", names(mf))]]
+    mf.r2i <- mf[[match("r2i", names(mf))]]
+    mf.ni <- mf[[match("ni", names(mf))]]
+    mf.x1i <- mf[[match("x1i", names(mf))]]
+    mf.x2i <- mf[[match("x2i", names(mf))]]
+    mf.t1i <- mf[[match("t1i", names(mf))]]
+    mf.t2i <- mf[[match("t2i", names(mf))]]
+    mf.m1i <- mf[[match("m1i", names(mf))]]
+    mf.m2i <- mf[[match("m2i", names(mf))]]
+    mf.sd1i <- mf[[match("sd1i", names(mf))]]
+    mf.sd2i <- mf[[match("sd2i", names(mf))]]
+    mf.xi <- mf[[match("xi", names(mf))]]
+    mf.mi <- mf[[match("mi", names(mf))]]
+    mf.ri <- mf[[match("ri", names(mf))]]
+    mf.ti <- mf[[match("ti", names(mf))]]
+    mf.sdi <- mf[[match("sdi", names(mf))]]
+    mf.r2i <- mf[[match("r2i", names(mf))]]
+    mf.ni <- mf[[match("ni", names(mf))]]
+    x1i <- eval(mf.x1i, data, enclos = sys.frame(sys.parent()))
+    x2i <- eval(mf.x2i, data, enclos = sys.frame(sys.parent()))
+    t1i <- eval(mf.t1i, data, enclos = sys.frame(sys.parent()))
+    t2i <- eval(mf.t2i, data, enclos = sys.frame(sys.parent()))
+    m1i <- eval(mf.m1i, data, enclos = sys.frame(sys.parent()))
+    m2i <- eval(mf.m2i, data, enclos = sys.frame(sys.parent()))
+    sd1i <- eval(mf.sd1i, data, enclos = sys.frame(sys.parent()))
+    sd2i <- eval(mf.sd2i, data, enclos = sys.frame(sys.parent()))
+    xi <- eval(mf.xi, data, enclos = sys.frame(sys.parent()))
+    mi <- eval(mf.mi, data, enclos = sys.frame(sys.parent()))
+    ri <- eval(mf.ri, data, enclos = sys.frame(sys.parent()))
+    ti <- eval(mf.ti, data, enclos = sys.frame(sys.parent()))
+    sdi <- eval(mf.sdi, data, enclos = sys.frame(sys.parent()))
+    r2i <- eval(mf.r2i, data, enclos = sys.frame(sys.parent()))
+    ni <- eval(mf.ni, data, enclos = sys.frame(sys.parent()))
+    ai <- eval(mf.ai, data, enclos = sys.frame(sys.parent()))
+    bi <- eval(mf.bi, data, enclos = sys.frame(sys.parent()))
+    ci <- eval(mf.ci, data, enclos = sys.frame(sys.parent()))
+    di <- eval(mf.di, data, enclos = sys.frame(sys.parent()))
+    n1i <- eval(mf.n1i, data, enclos = sys.frame(sys.parent()))
+    n2i <- eval(mf.n2i, data, enclos = sys.frame(sys.parent()))
+    yi <- eval(mf.yi, data, enclos = sys.frame(sys.parent()))
+    sei <- eval(mf.sei, data, enclos = sys.frame(sys.parent()))
+    vi <- eval(mf.vi, data, enclos = sys.frame(sys.parent()))
+    mf.slab <- mf[[match("slab", names(mf))]]
+    mf.subset <- mf[[match("subset", names(mf))]]
+    mf.include <- mf[[match("include", names(mf))]]
+    slab <- eval(mf.slab, data, enclos = sys.frame(sys.parent()))
+    subset <- eval(mf.subset, data, enclos = sys.frame(sys.parent()))
+    include <- eval(mf.include, data, enclos = sys.frame(sys.parent()))
+    escalc.args <- list(measure = measure, ai = ai, bi = bi, ci = ci,
+                        di = di, n1i = n1i, n2i = n2i, x1i = x1i, x2i = x2i,
+                        t1i = t1i, t2i = t2i, m1i = m1i, m2i = m2i, sd1i = sd1i,
+                        sd2i = sd2i, xi = xi, mi = mi, ri = ri, ti = ti, sdi = sdi,
+                        r2i = r2i, ni = ni, yi = yi, vi = vi, sei = sei, data = data,
+                        slab = slab, subset = subset, include = include, add = add,
+                        to = to, drop00 = drop00, vtype = vtype, var.names = var.names,
+                        add.measure = add.measure, append = append, replace = replace)
+    escalc.args <- escalc.args[!vapply(escalc.args, is.null,
+                                       logical(1))]
+    if (!missing(digits))
+      escalc.args$digits <- digits
+    escalc.args <- c(escalc.args, list(...))
+    data <- do.call(escalc, escalc.args)
+    dat <- data.frame(y = data$yi, s2 = data$vi)
+    return(dat)
   }
-  ### extract arguments without default values in the function.
-  mf.ai <- mf[[match("ai", names(mf))]]
-  mf.bi <- mf[[match("bi", names(mf))]]
-  mf.ci <- mf[[match("ci", names(mf))]]
-  mf.di <- mf[[match("di", names(mf))]]
-  mf.n1i <- mf[[match("n1i", names(mf))]]
-  mf.n2i <- mf[[match("n2i", names(mf))]]
-
-  mf.yi <- mf[[match("yi", names(mf))]]
-  mf.sei <- mf[[match("sei", names(mf))]]
-  mf.vi <- mf[[match("vi", names(mf))]]
-
-  mf.x1i <- mf[[match("x1i", names(mf))]]
-  mf.x2i <- mf[[match("x2i", names(mf))]]
-  mf.t1i <- mf[[match("t1i", names(mf))]]
-  mf.t2i <- mf[[match("t2i", names(mf))]]
-  mf.m1i <- mf[[match("m1i", names(mf))]]
-  mf.m2i <- mf[[match("m2i", names(mf))]]
-  mf.sd1i <- mf[[match("sd1i", names(mf))]]
-  mf.sd2i <- mf[[match("sd2i", names(mf))]]
-  mf.xi <- mf[[match("xi", names(mf))]]
-  mf.mi <- mf[[match("mi", names(mf))]]
-  mf.ri <- mf[[match("ri", names(mf))]]
-  mf.ti <- mf[[match("ti", names(mf))]]
-  mf.sdi <- mf[[match("sdi", names(mf))]]
-  mf.r2i <- mf[[match("r2i", names(mf))]]
-  mf.ni <- mf[[match("ni", names(mf))]]
-  mf.x1i <- mf[[match("x1i", names(mf))]]
-  mf.x2i <- mf[[match("x2i", names(mf))]]
-  mf.t1i <- mf[[match("t1i", names(mf))]]
-  mf.t2i <- mf[[match("t2i", names(mf))]]
-  mf.m1i <- mf[[match("m1i", names(mf))]]
-  mf.m2i <- mf[[match("m2i", names(mf))]]
-  mf.sd1i <- mf[[match("sd1i", names(mf))]]
-  mf.sd2i <- mf[[match("sd2i", names(mf))]]
-  mf.xi <- mf[[match("xi", names(mf))]]
-  mf.mi <- mf[[match("mi", names(mf))]]
-  mf.ri <- mf[[match("ri", names(mf))]]
-  mf.ti <- mf[[match("ti", names(mf))]]
-  mf.sdi <- mf[[match("sdi", names(mf))]]
-  mf.r2i <- mf[[match("r2i", names(mf))]]
-  mf.ni <- mf[[match("ni", names(mf))]]
-  #
-  x1i <- eval(mf.x1i, data, enclos = sys.frame(sys.parent()))
-  x2i <- eval(mf.x2i, data, enclos = sys.frame(sys.parent()))
-  t1i <- eval(mf.t1i, data, enclos = sys.frame(sys.parent()))
-  t2i <- eval(mf.t2i, data, enclos = sys.frame(sys.parent()))
-  m1i <- eval(mf.m1i, data, enclos = sys.frame(sys.parent()))
-  m2i <- eval(mf.m2i, data, enclos = sys.frame(sys.parent()))
-  sd1i <- eval(mf.sd1i, data, enclos = sys.frame(sys.parent()))
-  sd2i <- eval(mf.sd2i, data, enclos = sys.frame(sys.parent()))
-  xi <- eval(mf.xi, data, enclos = sys.frame(sys.parent()))
-  mi <- eval(mf.mi, data, enclos = sys.frame(sys.parent()))
-  ri <- eval(mf.ri, data, enclos = sys.frame(sys.parent()))
-  ti <- eval(mf.ti, data, enclos = sys.frame(sys.parent()))
-  sdi <- eval(mf.sdi, data, enclos = sys.frame(sys.parent()))
-  r2i <- eval(mf.r2i, data, enclos = sys.frame(sys.parent()))
-  ni <- eval(mf.ni, data, enclos = sys.frame(sys.parent()))
-
-
-  ai <- eval(mf.ai, data, enclos = sys.frame(sys.parent()))
-  bi <- eval(mf.bi, data, enclos = sys.frame(sys.parent()))
-  ci <- eval(mf.ci, data, enclos = sys.frame(sys.parent()))
-  di <- eval(mf.di, data, enclos = sys.frame(sys.parent()))
-  n1i <- eval(mf.n1i, data, enclos = sys.frame(sys.parent()))
-  n2i <- eval(mf.n2i, data, enclos = sys.frame(sys.parent()))
-
-  yi <- eval(mf.yi, data, enclos = sys.frame(sys.parent()))
-  sei <- eval(mf.sei, data, enclos = sys.frame(sys.parent()))
-  vi <- eval(mf.vi, data, enclos = sys.frame(sys.parent()))
-
-
-
-  mf.slab <- mf[[match("slab", names(mf))]]
-  mf.subset <- mf[[match("subset", names(mf))]]
-  mf.include <- mf[[match("include", names(mf))]]
-  slab <- eval(mf.slab, data, enclos = sys.frame(sys.parent()))
-  subset <- eval(mf.subset, data, enclos = sys.frame(sys.parent()))
-  include <- eval(mf.include, data, enclos = sys.frame(sys.parent()))
-
-  # if (is.null(bi))
-  #   bi <- n1i - ai
-  # if (is.null(di))
-  #   di <- n2i - ci
-  data <- escalc(measure, ai, bi, ci, di, n1i, n2i, x1i, x2i, t1i,
-                t2i, m1i, m2i, sd1i, sd2i, xi, mi, ri, ti, sdi, r2i, ni,
-                yi, vi, sei, data, slab, subset, include, add, to,
-                drop00, vtype, var.names,
-                add.measure, append, replace, digits,
-                ...)
-  dat <- data.frame(y=data$yi,s2=data$vi)
-  return(dat)
-}
