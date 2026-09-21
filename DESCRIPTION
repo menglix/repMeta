@@ -6,7 +6,9 @@ Depends: R (>= 3.5),
 Imports:
         parallel (>= 3.5.3),
         evd (>= 2.3.3),
-        metafor (>= 3.8.1)
+        metafor (>= 3.8.1),
+        mathjaxr
+RdMacros: mathjaxr
 Author: Mengli Xiao, Haitao Chu, James S. Hodges, and Lifeng Lin
 Maintainer: Mengli Xiao <mengli.xiao@cuanschutz.edu>
 Description: The package provides functionality for replicability analysis of multiple studies in a meta-analysis, as
