@@ -124,10 +124,6 @@ to.dat.repMeta(
 \item{digits}{optional integer to specify the number of decimal places to which the printed results should be rounded. If unspecified, the default is 4. Note that the values are stored without rounding in the returned object.}
 
 \item{\dots}{other arguments in \code{\link[metafor]{escalc}}.}
-
-\item{fi}{vector with the F-test statistics.}
-
-\item{pi}{vector with the (signed) p-values.}
 }
 \value{
 An object of class c("escalc","data.frame").
@@ -138,6 +134,6 @@ This function transforms a meta-analysis dataset to the dataset compatible of th
 \examples{
 # Obtain the transformed data frame format with odds ratio as the summary measure
 data.case <- to.dat.repMeta(data=moller12,ai = r1, n1i = n1, ci = r2, n2i = n2,measure="OR")
-Similar to \code{metafor}, we can compute any other measure, such as logit transformed proportions under example 1 of \code{\link[metafor]{conv.delta}}.
+# Similar to \code{metafor}, we can compute any other measure, such as logit transformed proportions under example 1 of \code{\link[metafor]{conv.delta}}.
 to.dat.repMeta(measure="PLO", xi=c(5,12), ni=c(40,80))
 }
