@@ -1,7 +1,7 @@
 Package: repMeta
 Type: Package
 Title: {repMeta}: Quantifying Replicability of Multiple Studies in a Meta-Analysis
-Version: 0.1.0
+Version: 0.1.1
 Depends: R (>= 3.5),
 Imports:
         parallel (>= 3.5.3),
