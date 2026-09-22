@@ -10,15 +10,15 @@ bootdat <- function(dat1,SEED,tau2){
 #'
 #' This function obtains numbers of \eqn{nb} \eqn{R_m} values from parametric bootstrap
 #'
-#' @param dat1 data frame, a meta-analysis dataset with after \code{\link{to.dat.repMeta}}.
+#' @param dat1 data frame, a meta-analysis dataset transformed by \code{\link{to.dat.repMeta}}.
 #' @param m numeric, \eqn{m} value.
 #' @param nb numeric, number of iterations in parametric bootstrap.
 #' @return \eqn{R_m} values from parametric bootstrap, a vector of length \eqn{nb}.
 #' @examples
 #' data.case <- to.dat.repMeta(data=moller12,ai = r1, n1i = n1, ci = r2, n2i = n2,measure="OR")
-#' # 1000 bootstrapped \eqn{R_1} values
+#' # 1000 bootstrapped R_1 values
 #' calempF(data.case,1)
-#' # 500 bootstrapped \eqn{R_1} values
+#' # 500 bootstrapped R_1 values
 #' calempF(data.case,1,nb=500)
 #' @export
 calempF <- function(dat1,m,nb=1000,n.cores=getOption("mc.cores",2L)){

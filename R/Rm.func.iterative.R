@@ -1,9 +1,9 @@
 #' Identify non-replicable studies in a meta-analysis from \eqn{R_m} (the Gumbel approximation)
 #'
 #' This function identifies non-replicable studies from \eqn{R_m} and replicability test (using the Gumbel approximation).
-#' The meta-analysis dataset needs be transformed by \code{\link{to.dat.repMeta}}.
+#' The meta-analysis dataset needs to be transformed by \code{\link{to.dat.repMeta}}.
 #'
-#' @param dat1 data.frame, a meta-analysis dataset with \eqn{n} studies after transformed by \code{\link{to.dat.repMeta}}.
+#' @param dat1 data.frame, meta-analysis dataset of \eqn{n} studies transformed by \code{\link{to.dat.repMeta}}.
 #' @param m numeric, \eqn{m} value, the default is 1.
 #' @return A list object containing following components:
 #' \describe{
@@ -12,15 +12,15 @@
 #'   \item{\code{nonrep_studies}}{Row indices of the non-replicable studies in \code{dat1}}
 #' }
 #' @examples
-#' # Identify the non-replicable study using \eqn{R_1}
+#' # Identify the non-replicable study using R_1
 #' data.case <- to.dat.repMeta(data=moller12,ai = r1, n1i = n1, ci = r2, n2i = n2,measure="OR")
 #' iden.ls <- Rm.func.iterative(data.case,1)
-#' # \eqn{p}-value of replicability test
+#' # p-value of replicability test
 #' iden.ls$P_1
 #' # index of non-replicable study
 #' iden.ls$nonrep_studies
 #' nonrep.id <- iden.ls$nonrep_studies
-#' # \eqn{R_1} and its \eqn{p}-value among replicable studies
+#' # R_1 and its p-value among replicable studies
 #' iden.ls$stat
 #' @export
 Rm.func.iterative <- function(dat1,m=1){

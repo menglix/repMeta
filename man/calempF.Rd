@@ -7,7 +7,7 @@
 calempF(dat1, m, nb = 1000, n.cores = getOption("mc.cores", 2L))
 }
 \arguments{
-\item{dat1}{data frame, a meta-analysis dataset with after \code{\link{to.dat.repMeta}}.}
+\item{dat1}{data frame, a meta-analysis dataset transformed by \code{\link{to.dat.repMeta}}.}
 
 \item{m}{numeric, \eqn{m} value.}
 
@@ -21,8 +21,8 @@ This function obtains numbers of \eqn{nb} \eqn{R_m} values from parametric boots
 }
 \examples{
 data.case <- to.dat.repMeta(data=moller12,ai = r1, n1i = n1, ci = r2, n2i = n2,measure="OR")
-# 1000 bootstrapped \eqn{R_1} values
+# 1000 bootstrapped R_1 values
 calempF(data.case,1)
-# 500 bootstrapped \eqn{R_1} values
+# 500 bootstrapped R_1 values
 calempF(data.case,1,nb=500)
 }

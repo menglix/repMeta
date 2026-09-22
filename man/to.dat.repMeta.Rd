@@ -129,11 +129,12 @@ to.dat.repMeta(
 An object of class c("escalc","data.frame").
 }
 \description{
-This function transforms a meta-analysis dataset to the dataset compatible of the package. More details are in \code{\link[metafor]{escalc}}.
+This function transforms a meta-analysis dataset to the dataset compatible with the package. More details are in \code{\link[metafor]{escalc}}.
 }
 \examples{
 # Obtain the transformed data frame format with odds ratio as the summary measure
 data.case <- to.dat.repMeta(data=moller12,ai = r1, n1i = n1, ci = r2, n2i = n2,measure="OR")
-# Similar to \code{metafor}, we can compute any other measure, such as logit transformed proportions under example 1 of \code{\link[metafor]{conv.delta}}.
+# Similar to "metafor", we can compute any other measure, such as logit
+# transformed proportions under example 1 of metafor in conv.delta().
 to.dat.repMeta(measure="PLO", xi=c(5,12), ni=c(40,80))
 }

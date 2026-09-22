@@ -14,7 +14,7 @@ install.packages("devtools") # comment out if you have the devtools package
 devtools::install_github("menglix/repMeta")
 ```
 
-> **Note (written by Claude):** repMeta 0.1.1+ works with current `metafor` releases (tested against 3.8.1 and 5.2.1). If you are stuck on repMeta 0.1.0 and cannot upgrade, that version only works with the older `metafor 2.4.0`, bundled in this repo as `metafor_2.4-0.tar.gz` for reference; otherwise ignore that file and just install the latest `metafor` from CRAN.
+> **Note (co-written with Claude):** repMeta 0.1.1+ works with current `metafor` releases (tested against 3.8.1 and 5.2.1). If you are stuck on repMeta 0.1.0 and cannot upgrade, that version only works with the older `metafor 2.4.0`, bundled in this repo as `metafor_2.4-0.tar.gz` for reference; otherwise ignore that file and just install the latest `metafor` from CRAN.
 
 # Minimum toy example to reproduce the case study in the paper
 

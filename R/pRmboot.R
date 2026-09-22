@@ -1,9 +1,9 @@
 #' Test the replicability of multiple studies in a meta-analysis from \eqn{R_m} (the parametric bootstrap)
 #'
 #' This function obtains the \eqn{p}-value of the replicability test (detect non-replicability), using the parametric bootstrap.
-#' The meta-analysis dataset needs be transformed by \code{\link{to.dat.repMeta}}.
+#' The meta-analysis dataset needs to be transformed by \code{\link{to.dat.repMeta}}.
 #'
-#' @param dat1 data.frame, a meta-analysis dataset with \eqn{n} studies after transformed by \code{\link{to.dat.repMeta}}.
+#' @param dat1 data.frame, meta-analysis dataset of \eqn{n} studies transformed by \code{\link{to.dat.repMeta}}.
 #' @param m numeric, \eqn{m} value.
 #' @return The \eqn{p}-value of \eqn{R_m} from the parametric bootstrap.
 #' @examples

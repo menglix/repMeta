@@ -8,7 +8,7 @@
 A data frame with 17 rows and 7 variables:
 \describe{
   \item{\code{CDSR.id}}{character, CDSR ID}
-  \item{\code{data.type}}{character, show whether the outcome is continous (CONT) or binary (DICH)}
+  \item{\code{data.type}}{character, show whether the outcome is continuous (CONT) or binary (DICH)}
   \item{\code{study.name}}{character, author and year}
   \item{\code{r1}}{numeric, event counts in the treatment group}
   \item{\code{r2}}{numeric, event counts in the control group}

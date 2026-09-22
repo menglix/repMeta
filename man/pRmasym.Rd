@@ -7,7 +7,7 @@
 pRmasym(dat1, m)
 }
 \arguments{
-\item{dat1}{data.frame, a meta-analysis dataset with \eqn{n} studies after transformed by \code{\link{to.dat.repMeta}}.}
+\item{dat1}{data.frame, meta-analysis dataset of \eqn{n} studies transformed by \code{\link{to.dat.repMeta}}.}
 
 \item{m}{numeric, \eqn{m} value.}
 }
@@ -16,7 +16,7 @@ The \eqn{p}-value of \eqn{R_m} from the Gumbel approximation.
 }
 \description{
 This function obtains the \eqn{p}-value of the replicability test (detect non-replicability), using the Gumbel approximation.
-The meta-analysis dataset needs be transformed by \code{\link{to.dat.repMeta}}.
+The meta-analysis dataset needs to be transformed by \code{\link{to.dat.repMeta}}.
 }
 \examples{
 # Obtain the R1

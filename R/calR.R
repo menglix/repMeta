@@ -26,10 +26,10 @@ meta.reml <- function(dat){
 }
 #' Quantify replicability in a meta-analysis by the observed \eqn{R_m} statistic
 #'
-#' This function obtains the observed \eqn{R_m} statistic to qunaitfy replicability of all studies in a meta-analysis.
-#' The meta-analysis dataset needs be transformed by \code{\link{to.dat.repMeta}} before using this function.
+#' This function obtains the observed \eqn{R_m} statistic to quantify replicability of all studies in a meta-analysis.
+#' The meta-analysis dataset needs to be transformed by \code{\link{to.dat.repMeta}} before using this function.
 #'
-#' @param dat1 data.frame, a meta-analysis dataset with \eqn{n} studies after transformed by \code{\link{to.dat.repMeta}}.
+#' @param dat1 data.frame, meta-analysis dataset of \eqn{n} studies transformed by \code{\link{to.dat.repMeta}}.
 #' @param m numeric, \eqn{m} value.
 #' @return A list contains the observed Rm and \eqn{\mathcal{C}^n_m} values of \eqn{R_{\mathcal{A}_{m,k}}} from the meta-analysis.
 #' \describe{
